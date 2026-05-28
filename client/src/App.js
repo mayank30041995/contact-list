@@ -103,7 +103,7 @@ class App extends React.Component {
               onChange={this.handleChange}
             />
           </div>
-
+          {/*  */}
           <div className="form-input">
             <textarea
               placeholder="Body"
