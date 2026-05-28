@@ -91,7 +91,9 @@ class App extends React.Component {
 
     return (
       <div className="app">
-        <h2>Welcome to the best app ever bro???</h2>
+        <h2 style={{ textAlign: "center", color: "red" }}>
+          Welcome to the best app ever bro???
+        </h2>
 
         <form onSubmit={this.submit}>
           <div className="form-input">
