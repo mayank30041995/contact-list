@@ -15,11 +15,8 @@ steps:
       command: |
         ssh -o StrictHostKeyChecking=no ubuntu@$EC2_PUBLIC_IP << 'EOF'
           cd ~/contact-list
-
           git pull origin main
-
           docker compose down
-
           docker compose up -d --build
         EOF
 ```
