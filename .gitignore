@@ -1,2 +1,21 @@
-# No modules
-node_modules
+# Node modules
+node_modules/
+
+# Terraform files
+infra/.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Terraform lock file
+.terraform.lock.hcl
+
+# Environment files
+.env
+.env.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
