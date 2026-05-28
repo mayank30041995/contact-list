@@ -1,29 +1,27 @@
 version: 2.1
 
 jobs:
-deploy:
-machine: true
+  deploy:
+    machine: true
 
-```
-steps:
-  - checkout
+    steps:
+      - checkout
 
-  - add_ssh_keys
+      - add_ssh_keys
 
-  - run:
-      name: Deploy Application
-      command: |
-        ssh -o StrictHostKeyChecking=no ubuntu@$EC2_PUBLIC_IP << 'EOF'
-          cd ~/contact-list
-          git pull origin main
-          docker compose down
-          docker compose up -d --build
-        EOF
-```
+      - run:
+          name: Deploy Application
+          command: |
+            ssh -o StrictHostKeyChecking=no ubuntu@$EC2_PUBLIC_IP << 'EOF'
+              cd ~/contact-list
+              git pull origin main
+              docker compose down
+              docker compose up -d --build
+            EOF
 
 workflows:
-version: 2
+  version: 2
 
-deploy_pipeline:
-jobs:
-- deploy
+  deploy_pipeline:
+    jobs:
+      - deploy
